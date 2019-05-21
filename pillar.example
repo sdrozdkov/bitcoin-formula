@@ -1,0 +1,12 @@
+bitcoind:
+  listen: 1
+  txindex: 1
+  disable_wallet: 1
+  max_connections: 125
+  db_cache: 2000
+  prune: 0
+  server: 1
+  rpc_allow_ip: 127.0.0.1
+  deprecated_rpc: signrawtransaction
+  rpcauths:
+    - "change_me:change_me"

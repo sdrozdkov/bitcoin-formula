@@ -1,0 +1,43 @@
+{%- set bitcoin = pillar.get('bitcoin', {}) -%}
+
+{%- if bitcoin.listen is defined %}
+listen={{ bitcoin.listen }}
+{%- endif %}
+
+{%- if bitcoin.server is defined %}
+server={{ bitcoin.server }}
+{%- endif %}
+
+{%- if bitcoin.max_connections is defined %}
+maxconnections={{ bitcoin.max_connections }}
+{%- endif %}
+
+{%- if bitcoin.disable_wallet is defined %}
+disablewallet={{ bitcoin.disable_wallet }}
+{%- endif %}
+
+{%- if bitcoin.db_cache is defined %}
+dbcache={{ bitcoin.db_cache }}
+{%- endif %}
+
+{%- if bitcoin.prune is defined %}
+prune={{ bitcoin.prune }}
+{%- endif %}
+
+{%- if bitcoin.txindex is defined %}
+txindex={{ bitcoin.txindex }}
+{%- endif %}
+
+{%- if bitcoin.rpc_allow_ip is defined %}
+rpcallowip={{ bitcoin.rpc_allow_ip }}
+{%- endif %}
+
+{%- if bitcoin.deprecated_rpc is defined %}
+deprecatedrpc={{ bitcoin.deprecated_rpc }}
+{%- endif %}
+
+{%- if bitcoin.server is defined and bitcoin.rpcauths is defined %}
+  {%- for rpcauth in bitcoin.rpcauths %}
+rpcauth={{ rpcauth }}
+  {%- endfor %}
+{%- endif %}
