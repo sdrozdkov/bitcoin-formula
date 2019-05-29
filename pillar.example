@@ -1,4 +1,4 @@
-bitcoind:
+bitcoin:
   listen: 1
   txindex: 1
   disable_wallet: 1
